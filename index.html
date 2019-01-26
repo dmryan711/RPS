@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+     <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Rock Paper Scissors</title>
+</head>
+<body>
+
+    <!--Title-->
+    <h1>Rock Paper Scissors</h1>
+    
+    <div id="game-container">
+        <!--Player-->
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" id ="playerImage" src="images/default.png" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Player 1</h5>
+                <p class="card-text" id="playerWeaponTitle">Pick Your Weapon</p>
+                <a href="#" class="btn btn-primary playButton" id="rock">Rock</a>
+                <a href="#" class="btn btn-primary playButton" id="paper">Paper</a>
+                <a href="#" class="btn btn-primary playButton" id="scissor">Scissors</a>
+            </div>
+        </div>
+
+        <!--COMPUTER-->
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" id ="computerImage"src="images/default.png" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Computer</h5>
+                <p class="card-text" id="weaponTitle">Weapon Ready</p>
+            </div>
+        </div>
+    </div>
+
+    <!--Score-->
+    <div id="score-wrapper">
+        <p id="playerScore">Player Score: 0</p>
+        <p id="computerScore">Computer Score: 0</p>
+    </div>
+
+    <!--BOOTSTRAP JS-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script> 
+    
+    <!--GAME LOGIC-->
+    <script src="logic.js"></script>
+</body>
+</html>
+
+
+
+<!-- In groups of 4, begin the process of coding out the rock-paper-scissors game.
+
+**Rules for rock-paper-scissors**
+
+Rock: wins against scissors, loses to paper, and ties against itself.
+Paper: wins against rock, loses to scissors, and ties against itself.
+Scissors: wins against paper, loses to rock, and ties against itself. -->
