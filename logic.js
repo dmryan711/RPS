@@ -14,35 +14,102 @@ function determineWinner(){
         console.log("comp: rock /n player:scissor");
         computerScore++;
         setScore("computer");
+
     }else if(computerPick === "rock" && playerPick ==="paper"){
         console.log("comp: rock /n player:paper");
         playerScore++;
         setScore("player");
-    }else if(computerPick === "rock" && playerPick ==="rock"){
+
+    }else if(computerPick === "rock" && playerPick === "rock"){
         console.log("comp: rock /n player:rock");
+
     }else if(computerPick === "paper" && playerPick ==="rock"){
         console.log("comp: paper /n player:rock");
         computerScore++;
         setScore("computer");
+
     }else if(computerPick === "paper" && playerPick ==="paper"){
         console.log("comp: paper /n player:paper"); 
-    }else if(computerPick === "paper" && playerPick ==="scissor"){
+
+    }else if(computerPick === "paper" && playerPick ==="scissors"){
         console.log("comp: paper /n player:scissor");
         playerScore++;  
         setScore("player");
-    }else if(computerPick === "scissor" && playerPick ==="rock"){
+
+    }else if(computerPick === "scissors" && playerPick ==="rock"){
         console.log("comp: scissor /n player:rock");
         playerScore++;  
         setScore("player");
-    }else if(computerPick === "scissor" && playerPick ==="paper"){
+
+    }else if(computerPick === "scissors" && playerPick ==="paper"){
         console.log("comp: scissor /n player:paper");
         computerScore++;
         setScore("computer");
-    }else if(computerPick === "scissor" && playerPick ==="scissor"){
+
+    }else if(computerPick === "scissors" && playerPick ==="scissors"){
         console.log("comp: scissor /n player:scissor");
           
     }
 }
+
+//REFACTOR START
+
+
+//NEEDS A REVISION
+//OnCLICK Event Simplified 
+    //sets listeners for all buttons
+function addWeaponListener(weaponString){
+   document.getElementById(weaponString).addEventListener("click",()=>{
+       playerPick = weaponString;
+
+       //Player "Set" something...NEED TO SIMPLIFY that
+   });
+
+}
+
+//SET UI for selection
+    //sets title and image for computer or player
+function setUIForUserandWeapon(userString,weaponString){
+    var imageElement;
+    var titleElement;
+    if(userString==="computer"){
+    //get image & title elements for computer
+    imageElement = document.getElementById('computerImage');
+    titleElement = document.getElementById('weaponTitle');
+
+    }else if(userString==="player"){
+    //get image & title elements for player
+     imageElement = document.getElementById('playerImage');
+     titleElement = document.getElementById('playerWeaponTitle');
+    }
+
+    setUIForWeapon(weaponString,imageElement,titleElement);
+
+
+}
+
+    //Helper Method for UI setting
+    function setUIForWeapon(weaponString,imageElement,titleElement){
+        if(weaponString === "rock"){
+            imageElement.src = "images/rock.jpg";
+            titleElement.innerHTML = "Rock"; 
+
+        }else if(weapongString==="paper"){
+            imageElement.src = "images/paper.jpg";
+            titleElement.innerHTML = "Paper"; 
+
+        }else if(weaponString==="scissors"){
+            imageElement.src = "images/scissors.jpg";
+            titleElement.innerHTML = "Scissors"; 
+        }else{
+            console.log("ERROR IN SET UI FOR WEAPON");
+        }
+    }
+
+
+
+
+//REFACTOR END
 
 //On Click Events for Rock Paper or Scissor buttons
 var rockElement = document.getElementById('rock');
@@ -63,6 +130,20 @@ rockElement.addEventListener("click",()=>{
 
 
 }); 
+
+function playerSetRock(){
+    console.log("Player: Rock");
+    //Set the image
+    var playerImageElement = document.getElementById('playerImage');
+
+    playerImageElement.src= "images/rock.jpg";
+    
+    //Set the title
+    var titleElement = document.getElementById('playerWeaponTitle');
+
+    titleElement.innerHTML = "Rock";
+
+}
 
 
 var paperElement = document.getElementById('paper');
@@ -85,11 +166,11 @@ paperElement.addEventListener("click",()=>{
 }); 
 
 
-var scissorElement = document.getElementById('scissor');
+var scissorElement = document.getElementById('scissors');
 
 scissorElement.addEventListener("click",()=>{
     
-    playerPick = "scissor";
+    playerPick = "scissors";
 
     console.log(" Scissor Clicked")
 
@@ -200,7 +281,7 @@ function generateWeapon(){
         titleElement.innerHTML = "Scissors";
 
         //Set computer selection
-        computerPick ="scissor";
+        computerPick ="scissors";
 
     }
 
